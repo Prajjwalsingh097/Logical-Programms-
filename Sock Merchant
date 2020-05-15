@@ -1,0 +1,50 @@
+
+    // Complete the sockMerchant function below.
+    static int sockMerchant(int n, int[] ar) {
+
+      //Create an hashmap and will store the number of each element we get from array
+      HashMap<Integer,Integer> hmap=new HashMap<Integer,Integer>();
+
+
+      //for each loop and retrive the array which is given 
+      for(int arr:ar)
+      {
+        //check if the value is already 
+        if(hmap.containsKey(arr))
+        {
+          //If already exist so increase the value by one
+          hmap.put(arr,hmap.get(arr)+1);
+        }else
+        {
+          hmap.put(arr,1);
+        }
+
+
+      }
+
+      //Return type is a varibae that will strore the number pairs given array 
+      int ret=0;
+
+      // for each loop for retrival of hash data 
+      for(Map.Entry e : hmap.entrySet())
+      {
+
+          System.out.println(e.getKey()+"  :  "+e.getValue());
+          // Variable temp the pairs of element
+
+          int divPair=hmap.get(e.getKey())/2;  //4 4/2=2;
+
+
+          //Store the PAirs of given Arrays 
+          ret=ret+divPair;
+
+      }
+
+
+
+
+
+
+        return ret;
+            
+    }
